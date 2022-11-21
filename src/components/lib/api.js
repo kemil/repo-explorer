@@ -23,13 +23,11 @@ const getGithubUser = async (search) => {
 const getGithubUserRepos = async (name) => {
   const result = await api.get(`/users/${name}/repos`)
   const repos = []
-  console.log(result)
   result?.data?.forEach((data, i) => {
     const repo = { ...data, key: i.toString() }
     repos.push(repo)
   })
 
-  console.log(repos)
   return repos
 }
 

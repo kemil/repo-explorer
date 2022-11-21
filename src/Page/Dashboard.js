@@ -46,7 +46,7 @@ function Dashboard () {
 		{
 			title: 'Profile',
 			dataIndex: 'html_url',
-			render: (profileUrl) => <a href={profileUrl}> {profileUrl} </a>
+			render: (profileUrl) => <a href={profileUrl} target='_blank'  rel='noopener noreferrer'> {profileUrl} </a>
 		},
 	]
 
@@ -54,8 +54,8 @@ function Dashboard () {
     const repoColumns = [
       {
 				title: 'Repository Name',
-				dataIndex: 'name',
 				key: 'name',
+				render: (row) => <a href={row.html_url} target='_blank'  rel='noopener noreferrer'> {row.name} </a>
 			},
 			{
 				title: 'Description',
